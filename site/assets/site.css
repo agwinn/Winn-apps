@@ -56,6 +56,8 @@ img { max-width: 100%; height: auto; display: block; }
 .hero p { font-size: clamp(17px, 2.4vw, 21px); margin: 0; max-width: 620px; opacity: 0.92; }
 .hero .app-id { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
 .hero .app-id img { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.hero .app-id div { display: flex; flex-direction: column; line-height: 1.3; }
+.hero .app-id .app-name { font-size: 22px; }
 .hero .app-id span { font-size: 15px; opacity: .85; }
 
 .button {
