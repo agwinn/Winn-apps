@@ -1,7 +1,7 @@
 # winn-apps.uk
 
 Website for Andrew Winn's apps, hosted on the Azure Static Web App **andrewwinn**
-(https://thankful-tree-098e32203.6.azurestaticapps.net, to become https://winn-apps.uk).
+(https://www.winn-apps.uk, also https://thankful-tree-098e32203.6.azurestaticapps.net).
 
 ## Layout
 
@@ -20,9 +20,7 @@ Plain HTML and CSS, no build step. Preview locally with `python3 -m http.server 
 ## Publishing
 
 Every push to `main` runs `.github/workflows/deploy.yml`, which uploads `site/` to the Static Web App. It needs the
-repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN` (Azure › andrewwinn › Overview › Manage deployment token).
-
-`vue-app/`, `infra/` and `azure.yaml` are the original `azd` starter; they can go once the new site is live.
+secret `AZURE_STATIC_WEB_APPS_API_TOKEN` in the `main` environment (Azure › andrewwinn › Overview › Manage deployment token).
 
 ## Adding an app
 

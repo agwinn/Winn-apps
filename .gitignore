@@ -1,5 +1,1 @@
 .DS_Store
-.azure
-package-lock.json
-node_modules/
-dist/
