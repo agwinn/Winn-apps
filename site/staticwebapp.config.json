@@ -1,5 +1,5 @@
 {
-  "trailingSlash": "always",
+  "trailingSlash": "auto",
   "routes": [
     { "route": "/privacy", "redirect": "/limitalert/privacy/", "statusCode": 301 },
     { "route": "/support", "redirect": "/limitalert/support/", "statusCode": 301 },
