@@ -1,0 +1,101 @@
+/* Winn Apps: one stylesheet for every page. Light and dark follow the device. */
+:root {
+  --bg: #f6f8f8;
+  --surface: #ffffff;
+  --text: #15201f;
+  --muted: #5b6b69;
+  --line: #dfe6e5;
+  --accent: #0e605f;
+  --accent-text: #ffffff;
+  --hero-top: #148077;
+  --hero-bottom: #084047;
+  --radius: 18px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1112;
+    --surface: #141c1d;
+    --text: #eef3f2;
+    --muted: #9db0ad;
+    --line: #243131;
+    --accent: #5ed6c8;
+    --accent-text: #062a2a;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* Header and footer */
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+.site-header nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-size: 15px; }
+.site-header nav a:hover { color: var(--text); }
+.site-footer { margin-top: 64px; padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.site-footer a { color: var(--muted); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
+  color: #fff;
+  padding: 56px 0 64px;
+}
+.hero h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+.hero p { font-size: clamp(17px, 2.4vw, 21px); margin: 0; max-width: 620px; opacity: 0.92; }
+.hero .app-id { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
+.hero .app-id img { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.hero .app-id span { font-size: 15px; opacity: .85; }
+
+.button {
+  display: inline-block; margin-top: 26px; padding: 12px 22px; border-radius: 999px;
+  background: #fff; color: var(--hero-bottom); font-weight: 600; text-decoration: none;
+}
+.button.disabled { opacity: .85; cursor: default; }
+
+/* Sections */
+h1, h2, h3 { line-height: 1.2; }
+section { padding: 48px 0 0; }
+h2 { font-size: 26px; letter-spacing: -0.01em; margin: 0 0 16px; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+.muted { color: var(--muted); }
+
+/* App cards (home) */
+.cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card {
+  display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none;
+}
+.card:hover { border-color: var(--accent); }
+.card img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Features */
+.features { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.feature { padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.feature p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Screenshots: a swipeable row on phones, a wrapping grid on wider screens */
+.shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.shots img { width: 240px; flex: none; border-radius: 20px; scroll-snap-align: start; border: 1px solid var(--line); }
+
+/* Long-form text (privacy, support) */
+.prose { max-width: 720px; }
+.prose h1 { font-size: 34px; letter-spacing: -0.02em; margin: 40px 0 4px; }
+.prose h2 { font-size: 21px; margin: 32px 0 8px; }
+.prose .updated { color: var(--muted); margin: 0 0 24px; }
+.prose li { margin-bottom: 6px; }
+details { border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; background: var(--surface); margin-bottom: 10px; }
+details summary { cursor: pointer; font-weight: 600; }
+details p { margin: 10px 0 0; color: var(--muted); }

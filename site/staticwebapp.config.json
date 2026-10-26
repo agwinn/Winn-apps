@@ -1,0 +1,18 @@
+{
+  "trailingSlash": "always",
+  "routes": [
+    { "route": "/privacy", "redirect": "/limitalert/privacy/", "statusCode": 301 },
+    { "route": "/support", "redirect": "/limitalert/support/", "statusCode": 301 },
+    { "route": "/assets/*", "headers": { "cache-control": "public, max-age=86400" } }
+  ],
+  "responseOverrides": {
+    "404": { "rewrite": "/404.html", "statusCode": 404 }
+  },
+  "mimeTypes": {
+    ".pem": "application/x-pem-file"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}
