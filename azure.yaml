@@ -1,0 +1,11 @@
+# filepath: azure.yaml
+name: azd-vue-static-webapp
+metadata:
+  template: custom
+location: westeurope
+services:
+  web:
+    project: vue-app
+    dist: dist
+    language: js
+    host: staticwebapp
