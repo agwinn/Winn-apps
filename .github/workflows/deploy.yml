@@ -1,5 +1,5 @@
 # Publishes site/ to the "andrewwinn" Azure Static Web App (winn-apps.uk) on every push to main.
-# Needs the repository secret AZURE_STATIC_WEB_APPS_API_TOKEN (Azure › andrewwinn › Manage deployment token).
+# Needs the secret AZURE_STATIC_WEB_APPS_API_TOKEN in the "main" environment (Azure › andrewwinn › Manage deployment token).
 name: Deploy website
 
 on:
@@ -10,6 +10,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: main
     steps:
       - uses: actions/checkout@v4
       - name: Upload site to Azure Static Web Apps
