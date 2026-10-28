@@ -25,3 +25,5 @@ secret `AZURE_STATIC_WEB_APPS_API_TOKEN` in the `main` environment (Azure › an
 ## Adding an app
 
 Copy `site/limitalert/` to `site/<app>/`, put its images in `site/assets/<app>/`, and add a card to `site/index.html`.
+
+An app not yet released gets a plain card (a `div`, not a link) with a `<span class="badge">Coming soon</span>` after its name, as Leccy has; its pages come later.
