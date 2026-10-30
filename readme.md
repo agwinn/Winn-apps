@@ -11,6 +11,8 @@ Website for Andrew Winn's apps, hosted on the Azure Static Web App **andrewwinn*
 | `site/limitalert/` | LimitAlert: pitch, screenshots, features, pricing |
 | `site/limitalert/privacy/` | LimitAlert privacy policy (App Store Connect Privacy Policy URL) |
 | `site/limitalert/support/` | LimitAlert support and FAQ (App Store Connect Support URL) |
+| `site/shoppinglist/privacy/` | Shopping List privacy policy (App Store Connect Privacy Policy URL) |
+| `site/shoppinglist/support/` | Shopping List support and FAQ (App Store Connect Support URL) |
 | `site/.well-known/appspecific/com.tesla.3p.public-key.pem` | Tesla Fleet API public key (must stay at this path) |
 | `site/assets/` | `site.css` (shared styles) and per-app images |
 | `site/staticwebapp.config.json` | Azure settings: `/privacy` and `/support` short links, 404 page, headers |
