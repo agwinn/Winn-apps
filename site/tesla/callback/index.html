@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Signing in to Leccy</title>
+<script>
+  // Tesla sends the sign-in back here (its redirect must be on Leccy's
+  // registered domain); the code and state go straight on to Leccy's
+  // sign-in service, which swaps the code with Leccy's secret.
+  location.replace("https://api.winn-apps.uk/tesla/callback" + location.search);
+</script>
+</head>
+<body style="font-family: -apple-system, sans-serif; text-align: center; padding: 3rem 1rem;">
+<p>Signing you in to Leccy…</p>
+<noscript><p>Turn on JavaScript to finish signing in.</p></noscript>
+</body>
+</html>
