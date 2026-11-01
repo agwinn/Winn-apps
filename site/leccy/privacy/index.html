@@ -15,12 +15,13 @@
 
 <main class="wrap prose">
 <h1>Leccy Privacy Policy</h1>
-<p class="updated">Last updated 28 October 2026 (deleting sign-in details)</p>
+<p class="updated">Last updated 1 November 2026 (signing in to Tesla through Leccy)</p>
 
 <p>Leccy shows your home's electricity in one place: what you import and export, your solar, home batteries, EV
-charging and heat pump, with what it costs and saves. It is designed to work without collecting personal data:
-there's no Leccy account, no advertising, no analytics and no tracking. We don't run a server that receives your
-energy data.</p>
+charging and heat pump, with what it costs and saves. It is designed to collect as little as possible: there's no
+advertising, no analytics and no tracking, and your energy readings stay on your iPhone. The one exception is
+optional: if you sign in to Tesla through Leccy, a small Leccy server keeps that sign-in for you, as described
+below.</p>
 
 <h2>Your energy data</h2>
 <p>Leccy fetches your readings, tariffs and device status directly from your iPhone to the services you connect, and
@@ -35,14 +36,37 @@ them directly; we don't see what passes between them. Each service's own privacy
   smart charging and heat pump.</li>
   <li><strong>Enphase:</strong> your own Enphase developer app's details and your sign-in, to read your solar
   production and export.</li>
-  <li><strong>Tesla:</strong> your own Tesla developer app's details and your sign-in on Tesla's page, to read your
-  Powerwall.</li>
+  <li><strong>Tesla:</strong> your sign-in on Tesla's page, either through Leccy (below) or with your own Tesla
+  developer app's details, to read your Powerwall and your car. Tesla asks which permissions to allow: your
+  Powerwall's data, your car's data and your car's location, used only to tell whether the car is at home.</li>
   <li><strong>myenergi:</strong> your hub's serial number and API key, to read your zappi, eddi and harvi.</li>
 </ul>
-<p>These details and the access tokens the services return are kept in your iPhone's Keychain. You can stop Leccy's
+<p>These details and the access tokens the services return are kept in your iPhone's Keychain (for a Tesla sign-in
+through Leccy, its longer-lasting token is kept on Leccy's server instead, as below). You can stop Leccy's
 access at any time with the service itself: delete the API key in your Octopus or myenergi account, or remove Leccy's
 access in your Enphase or Tesla account.</p>
 <p>As with any internet request, each service sees your IP address while it answers.</p>
+
+<h2>Signing in to Tesla through Leccy</h2>
+<p>Tesla's sign-in needs a registered app's secret, which can't be kept safely on a phone, so Leccy's own server
+holds it and keeps your Tesla sign-in for you. This is the only time Leccy's server is involved, and it only happens
+if you choose it.</p>
+<ul>
+  <li><strong>Sign in with Apple:</strong> you first continue with Apple, so the server knows whose sign-in is
+  whose. Leccy asks Apple for no name or email; Apple gives an identifier that only Leccy sees.</li>
+  <li><strong>What the server keeps:</strong> that identifier and your Tesla sign-in (its tokens, encrypted). If you
+  turn on live updates from your car, it also keeps your phone's notification address, and the latest your car
+  has sent: its name, charge level, whether it's plugged in and charging, and where it is.</li>
+  <li><strong>What it doesn't keep:</strong> your Tesla password (you type it on Tesla's page, never in Leccy), or
+  your energy readings, which your iPhone fetches from Tesla itself.</li>
+  <li><strong>Where:</strong> Microsoft Azure in the UK, encrypted at rest. The server's log records each request's
+  time and type, not its contents, for 30 days.</li>
+  <li><strong>Car updates:</strong> with live updates on, your car sends its charging to Leccy's server through
+  Tesla, and the server tells your iPhone through Apple's notification service when it plugs in or starts
+  charging.</li>
+  <li><strong>How long:</strong> until you delete your Leccy account. A Tesla sign-in that Leccy hasn't used for six
+  months is deleted automatically.</li>
+</ul>
 
 <h2>Your home's location and weather</h2>
 <p>Leccy doesn't use your iPhone's location. To show the weather at your home, it finds the home's approximate
@@ -51,8 +75,9 @@ forecast there. <a href="https://www.apple.com/legal/privacy/">Apple's privacy p
 data comes from <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather and its sources</a>.</p>
 
 <h2>Notifications and background refresh</h2>
-<p>Reminders, such as for upcoming supplier events, are scheduled on your iPhone. Background refresh lets iOS wake
-Leccy to fetch new readings from your services. You can turn either off in iOS Settings.</p>
+<p>Reminders, such as for upcoming supplier events, are scheduled on your iPhone. Notifications about your car
+come from Leccy's server, only if you turn on live updates from it. Background refresh lets iOS wake Leccy to fetch
+new readings from your services. You can turn either off in iOS Settings.</p>
 
 <h2>Diagnostic log</h2>
 <p>Leccy keeps a log on your iPhone to help with problems. It may include account numbers, device serial numbers and
@@ -67,9 +92,12 @@ your payment details. The app only checks with Apple which subscription is activ
 Cancelling an account before it starts deletes its sign-in details too. Deleting the app removes Leccy's data from
 your iPhone, though iOS may keep Keychain items after an app is deleted, so delete your homes in Leccy first, or
 revoke Leccy's access with each service as above.</p>
+<p>If you signed in through Leccy, delete your Leccy account in the app (Settings › Accounts › Delete Account): the
+server deletes everything it keeps for you straight away. Removing Leccy's access in your Tesla account also stops
+the sign-in working.</p>
 
 <h2>Children</h2>
-<p>Leccy is for managing a home's energy and isn't directed at children. It collects no personal data from anyone.</p>
+<p>Leccy is for managing a home's energy and isn't directed at children.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be published here with a new date.</p>
