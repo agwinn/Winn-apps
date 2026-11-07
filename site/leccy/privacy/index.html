@@ -15,13 +15,13 @@
 
 <main class="wrap prose">
 <h1>Leccy Privacy Policy</h1>
-<p class="updated">Last updated 1 November 2026 (signing in to Tesla through Leccy)</p>
+<p class="updated">Last updated 7 November 2026 (Leccy's server for battery control, the heat pump boost and Smart)</p>
 
 <p>Leccy shows your home's electricity in one place: what you import and export, your solar, home batteries, EV
 charging and heat pump, with what it costs and saves. It is designed to collect as little as possible: there's no
-advertising, no analytics and no tracking, and your energy readings stay on your iPhone. The one exception is
-optional: if you sign in to Tesla through Leccy, a small Leccy server keeps that sign-in for you, as described
-below.</p>
+advertising, no analytics and no tracking, and your energy readings stay on your iPhone. The exceptions are
+optional: if you sign in to Tesla through Leccy, or turn on a feature that acts on your equipment for you, a small
+Leccy server keeps what it needs for that, as described below.</p>
 
 <h2>Your energy data</h2>
 <p>Leccy fetches your readings, tariffs and device status directly from your iPhone to the services you connect, and
@@ -42,15 +42,18 @@ them directly; we don't see what passes between them. Each service's own privacy
   <li><strong>myenergi:</strong> your hub's serial number and API key, to read your zappi, eddi and harvi.</li>
 </ul>
 <p>These details and the access tokens the services return are kept in your iPhone's Keychain (for a Tesla sign-in
-through Leccy, its longer-lasting token is kept on Leccy's server instead, as below). You can stop Leccy's
+through Leccy, its longer-lasting token is kept on Leccy's server instead, and for the heat pump boost your Octopus
+API key is sent to it too, as below). You can stop Leccy's
 access at any time with the service itself: delete the API key in your Octopus or myenergi account, or remove Leccy's
 access in your Enphase or Tesla account.</p>
 <p>As with any internet request, each service sees your IP address while it answers.</p>
 
-<h2>Signing in to Tesla through Leccy</h2>
+<h2>Leccy's server</h2>
+<p>Leccy's own server is used only for what you choose to turn on: signing in to Tesla through Leccy, and the
+features that act on your equipment for you, at any hour, without your iPhone.</p>
+<h3>Signing in to Tesla through Leccy</h3>
 <p>Tesla's sign-in needs a registered app's secret, which can't be kept safely on a phone, so Leccy's own server
-holds it and keeps your Tesla sign-in for you. This is the only time Leccy's server is involved, and it only happens
-if you choose it.</p>
+holds it and keeps your Tesla sign-in for you.</p>
 <ul>
   <li><strong>Sign in with Apple:</strong> you first continue with Apple, so the server knows whose sign-in is
   whose. Leccy asks Apple for no name or email; Apple gives an identifier that only Leccy sees.</li>
@@ -67,6 +70,23 @@ if you choose it.</p>
   <li><strong>How long:</strong> until you delete your Leccy account. A Tesla sign-in that Leccy hasn't used for six
   months is deleted automatically.</li>
 </ul>
+<h3>Controlling your battery</h3>
+<p>If you turn on keeping your battery's tariff current, Maximise Export or holding the battery while your car
+charges, the server uses your Tesla sign-in to set your Powerwall's tariff and backup reserve. It keeps your
+settings, your energy site's id, your supplier's tariff codes and today's prices, the battery's own tariff from
+before Leccy first changed it (to put back when you turn it off), and when it last made a change. Your tariff's
+prices come from Octopus's public price list, which needs no sign-in.</p>
+<h3>Heat pump boost</h3>
+<p>If you turn on the heat pump boost, your iPhone sends your Octopus API key and account number, your heat pump's
+id and, if you have one, your Home Mini's id to the server. The key is kept encrypted, used only to read your heat
+pump's temperatures, your joined events and your Home Mini's import or export, and to boost your heat pump. It opens
+your whole Octopus account, so you can delete it at Octopus at any time; the server deletes its copy when you turn
+the boost off or delete your Leccy account. The temperatures and readings are used as they're read, not kept.</p>
+<h3>Your subscription</h3>
+<p>For Smart, which acts on your equipment, your iPhone sends the App Store's signed record of your subscription to
+the server, which checks it with Apple. Apple also tells the server when it renews, ends or is refunded. The server
+keeps which plan it is, when it's paid to and its App Store number, with your Leccy identifier; no payment details,
+which Apple never shares.</p>
 
 <h2>Your home's location and weather</h2>
 <p>Leccy doesn't use your iPhone's location. To show the weather at your home, it finds the home's approximate
@@ -75,8 +95,9 @@ forecast there. <a href="https://www.apple.com/legal/privacy/">Apple's privacy p
 data comes from <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather and its sources</a>.</p>
 
 <h2>Notifications and background refresh</h2>
-<p>Reminders, such as for upcoming supplier events, are scheduled on your iPhone. Notifications about your car
-come from Leccy's server, only if you turn on live updates from it. Background refresh lets iOS wake Leccy to fetch
+<p>Reminders, such as for upcoming supplier events, are scheduled on your iPhone. Notifications about your car, and
+about changes the server makes for you (a battery reserve set, a tariff that couldn't be updated, a heat pump
+boost), come from Leccy's server, only if you turn those features on. Background refresh lets iOS wake Leccy to fetch
 new readings from your services. You can turn either off in iOS Settings.</p>
 
 <h2>Diagnostic log</h2>
@@ -85,7 +106,8 @@ readings. It leaves your iPhone only if you choose to share it from the app's lo
 
 <h2>Subscriptions</h2>
 <p>Subscriptions are bought, renewed and cancelled through your Apple Account. Apple handles payment; we never see
-your payment details. The app only checks with Apple which subscription is active.</p>
+your payment details. The app checks with Apple which subscription is active; for Smart, the server checks it too,
+as above.</p>
 
 <h2>Deleting your data</h2>
 <p>Deleting a home in Leccy deletes its readings and the sign-in details of its accounts, Keychain included.
