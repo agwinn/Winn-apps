@@ -1,4 +1,4 @@
 {
-  "teslaViaServer": false,
+  "teslaViaServer": true,
   "livePollSeconds": 30
 }
